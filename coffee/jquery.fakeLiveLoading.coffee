@@ -7,8 +7,6 @@
 
 jQuery( ($) ->
   $.fn.fakeLoading = (options) ->
-    $.fn.reverse = Array.prototype.reverse
-
     $that = this
 
     defaults =
@@ -36,8 +34,9 @@ jQuery( ($) ->
     $items = $that.find(options.childSelector)
       .slice(0, options.numberToLoad)
       # otherwise the bottom ones show up first
-      .reverse()
+    $items = Array.prototype.reverse.call($items)
       # create the timeout for each one to load
+    $items
       .each () ->
         that = $(this)
 

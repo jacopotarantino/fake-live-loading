@@ -2,7 +2,6 @@
   jQuery(function($) {
     return $.fn.fakeLoading = function(options) {
       var $items, $that, defaults;
-      $.fn.reverse = Array.prototype.reverse;
       $that = this;
       defaults = {
         childSelector: '> *',
@@ -23,7 +22,9 @@
         };
       }
       options = $.extend(defaults, options);
-      $items = $that.find(options.childSelector).slice(0, options.numberToLoad).reverse().each(function() {
+      $items = $that.find(options.childSelector).slice(0, options.numberToLoad);
+      $items = Array.prototype.reverse.call($items);
+      $items.each(function() {
         var that, time;
         that = $(this);
         that.css({

@@ -1,23 +1,23 @@
 # jQuery Fake Live Loading Plugin
 
-A simple plugin to Make it look like your recent posts list is live-populating.
+A simple plugin to make it look like your recent posts list is live-populating.
 
 ## Usage
 
 Here's an example of how to use the plugin with all of the default options. All times are in milliseconds.
 
 ```javascript
-
-$('.recent_posts ul').fakeLoading({
-  childSelector: '> *'  // the items to load
-  numberToLoad: 10      // number of items that should start hidden
-  delay: 5000           // how long befor the first one loads
-  interval: 10000       // how often an item "loads"
-  wiggle: 2000          // varable amount of time to make the "loading" seem a little more random
-  animation: 'ease'     // css transition easing function
-  expandedSize: '5em'   // how tall items are after they're expanded
+jQuery(function($) {      // Only run after the document has loaded in case the script is above the document.
+  $('.recent_posts ul').fakeLoading({
+    childSelector: '> *', // the items to load
+    numberToLoad: 10,     // number of items that should start hidden
+    delay: 5000,          // how long befor the first one loads
+    interval: 10000,      // how often an item "loads"
+    wiggle: 2000,         // varable amount of time to make the "loading" seem a little more random
+    animation: 'ease',    // css transition easing function
+    expandedSize: '5em'   // how tall items are after they're expanded
+  });
 });
-
 ```
 
 ## Contributing
@@ -28,7 +28,8 @@ If you'd like to see a new feature but don't know how to contribute, email me an
 
 ## Changelog
 
-v0.1.0 - Initial Commit
+* v0.1.0 - Initial Commit
+* v0.1.1 - Cleaned up typos and grunt task
 
 ## Planned Features
 
@@ -36,7 +37,8 @@ v0.1.0 - Initial Commit
 
 ## Building from Source
 
-* requires node and npm
+requires node, npm, grunt-cli and coffeescript
+
 * `cd` into the plugin directory
 * run `npm install`
 * run `grunt`

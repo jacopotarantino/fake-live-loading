@@ -10,7 +10,6 @@
         interval: 10000,
         wiggle: 2000,
         animation: 'ease',
-        expandedSize: '5em',
         direction: 'vertical'
       };
       if (options === void 0) {
@@ -27,6 +26,7 @@
       $items.each(function() {
         var that, time;
         that = $(this);
+        that.originalHeight = that.height();
         that.css({
           visibility: 'hidden',
           height: '0px',
@@ -40,8 +40,7 @@
         return setTimeout(function() {
           return that.css({
             visibility: 'visible',
-            height: options.expandedSize,
-            overflow: 'auto'
+            height: that.originalHeight + 'px'
           });
         }, time);
       });

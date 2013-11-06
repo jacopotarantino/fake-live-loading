@@ -14,8 +14,7 @@ jQuery(function($) {      // Only run after the document has loaded in case the 
     delay: 5000,          // how long befor the first one loads
     interval: 10000,      // how often an item "loads"
     wiggle: 2000,         // varable amount of time to make the "loading" seem a little more random
-    animation: 'ease',    // css transition easing function
-    expandedSize: '5em'   // how tall items are after they're expanded
+    animation: 'ease'    // css transition easing function
   });
 });
 ```
@@ -30,6 +29,7 @@ If you'd like to see a new feature but don't know how to contribute, email me an
 
 * v0.1.0 - Initial Commit
 * v0.1.1 - Cleaned up typos and grunt task
+* v0.2.0 - Set height to compute automatically. Fixed namespace issue.
 
 ## Planned Features
 

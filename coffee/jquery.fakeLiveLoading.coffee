@@ -16,7 +16,6 @@ jQuery( ($) ->
       interval: 10000 # how often an item "loads"
       wiggle: 2000 # varable amount of time to make the "loading" seem a little more random
       animation: 'ease' # css transition easing function
-      expandedSize: '5em' # how tall items are after they're expanded
       direction: 'vertical' # TODO horizontal or vertical loading
 
     # if nothing is passed then we want to use all the defaults
@@ -40,6 +39,7 @@ jQuery( ($) ->
       .each () ->
         that = $(this)
 
+        that.originalHeight = that.height()
         # hide them to show again later
         that.css
           visibility: 'hidden'
@@ -56,8 +56,7 @@ jQuery( ($) ->
         setTimeout () ->
           that.css
             visibility: 'visible'
-            height: options.expandedSize
-            overflow: 'auto'
+            height: that.originalHeight + 'px'
         , time
 
 

@@ -14,8 +14,8 @@ jQuery(function ($) {
     delay: 5000,                       // how long befor the first one loads
     interval: 10000,                   // how often an item "loads"
     wiggle: 2000,                      // varable amount of time to make the "loading" seem a little more random
-    animation: 'ease'                  // css transition easing function
-    before: noop                       // callback to execute before each animation starts
+    animation: 'ease',                 // css transition easing function
+    before: noop,                      // callback to execute before each animation starts
     after: noop                        // callback to execute after each animation finishes
   });
 });

@@ -2,8 +2,8 @@
 # Simulate Live-Loading Elements on a page by hiding them,
 # then revealing them after a pseudo-random amount of time.
 #
-# Author: Jacopo Tarantino
-# Version: 0.2.0
+# Author: Jack Tarantino
+# Version: 1.0.0
 
 jQuery( ($) ->
   $.fn.fakeLoading = (options) ->

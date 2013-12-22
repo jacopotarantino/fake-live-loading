@@ -9,6 +9,9 @@ jQuery( ($) ->
   $.fn.fakeLoading = (options) ->
     $that = this
 
+    noop = () ->
+      return
+
     defaults =
       childSelector: '> *' # the items to load
       numberToLoad: 10 # number of items that should start hidden
@@ -17,6 +20,8 @@ jQuery( ($) ->
       wiggle: 2000 # varable amount of time to make the "loading" seem a little more random
       animation: 'ease' # css transition easing function
       direction: 'vertical' # TODO horizontal or vertical loading
+      before: noop # callback to execute before each animation starts
+      after: noop # callback to execute after each animation finishes
 
     # if nothing is passed then we want to use all the defaults
     if options == undefined
@@ -54,9 +59,13 @@ jQuery( ($) ->
         time += Math.floor(Math.random()*options.wiggle)
 
         setTimeout () ->
+          options.before()
+
           that.css
             visibility: 'visible'
             height: that.originalHeight + 'px'
+
+          option.after()
         , time
 
 

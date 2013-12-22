@@ -13,15 +13,15 @@ jQuery( ($) ->
       return
 
     defaults =
-      childSelector: '> *' # the items to load
-      numberToLoad: 10 # number of items that should start hidden
-      delay: 5000 # how long befor the first one loads
-      interval: 10000 # how often an item "loads"
-      wiggle: 2000 # varable amount of time to make the "loading" seem a little more random
-      animation: 'ease' # css transition easing function
+      childSelector: '> *'  # the items to load
+      numberToLoad: 10      # number of items that should start hidden
+      delay: 5000           # how long befor the first one loads
+      interval: 10000       # how often an item "loads"
+      wiggle: 2000          # varable amount of time to make the "loading" seem a little more random
+      animation: 'ease'     # css transition easing function
       direction: 'vertical' # TODO horizontal or vertical loading
-      before: noop # callback to execute before each animation starts
-      after: noop # callback to execute after each animation finishes
+      before: noop          # callback to execute before each animation starts
+      after: noop           # callback to execute after each animation finishes
 
     # if nothing is passed then we want to use all the defaults
     if options == undefined

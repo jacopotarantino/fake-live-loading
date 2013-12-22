@@ -43,10 +43,12 @@ jQuery( ($) ->
     $items
       .each () ->
         that = $(this)
-
         that.originalHeight = that.height()
+        that.originalMargin = that.css 'margin'
+
         # hide them to show again later
         that.css
+          margin: '0'
           visibility: 'hidden'
           height: '0px'
           overflow: 'hidden'
@@ -62,6 +64,7 @@ jQuery( ($) ->
           options.before()
 
           that.css
+            margin: that.originalMargin
             visibility: 'visible'
             height: that.originalHeight + 'px'
 

@@ -5,20 +5,20 @@ module.exports = (grunt) ->
 
     watch:
       coffee:
-        files: [ 'src/*.coffee' ]
+        files: [ 'coffee/*.coffee' ]
         tasks: [ 'coffee', 'uglify' ]
         options:
           nospawn: true
 
     coffee:
       compile:
-        files: 'js/jquery.fakeLiveLoading.js': [ 'coffee/*.coffee' ]
+        files: 'jquery.fakeLiveLoading.js': [ 'coffee/*.coffee' ]
 
     uglify:
       options:
         banner: "/** \n<%= pkg.description %> \n<%= pkg.copyright %> \n<%= pkg.license %>\n**/\n"
       dist:
-        src: ['js/*']
+        src: ['jquery.fakeLiveLoading.js']
         dest: "jquery.fakeLiveLoading.min.js"
 
   grunt.loadNpmTasks 'grunt-contrib-watch'
